@@ -70,7 +70,7 @@ function change(td){                               // this function gets listen 
 		if(!previous){
 			previous = e.target;
 		}
-		else if(previous.innerHTML == e.target.innerHTML){
+		else if((previous.innerHTML == e.target.innerHTML) && !(previous.id==e.target.id)){
 			status_c++;
 			setTimeout(function(){
 				e.target.className = previous.className = 'finish';
