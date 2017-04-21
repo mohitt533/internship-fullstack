@@ -1,0 +1,50 @@
+table tr {
+	display: flex;
+}
+
+table tr td{
+    margin: 20px;
+    padding: 60px;
+    border: 1px solid black;
+    background-image: url('images/question.png');
+    background-repeat: round;
+    background-size: 250px 180px;
+    text-indent: -9999px;
+	color:red;
+	font-size:50px;
+	
+}
+
+.opencard{
+	text-indent: 0px;
+}
+
+table tr td:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+.finish{
+	margin: 20px;
+    padding: 60px;
+    border: 1px solid black;
+    background-image: url('images/correct.png');
+    background-repeat: round;
+    background-size: 250px 180px;
+    text-indent: -9999px;
+	
+}
+
+input[type="text"] {
+	width: 50px;
+}
+h2{
+	background-color: yellow;
+    width: 400px;
+    position: absolute;
+    left: 600px;
+    top: 400px;
+    font-family: inherit;
+    color: red;
+	text-align:center;
+}

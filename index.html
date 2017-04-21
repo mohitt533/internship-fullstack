@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Game</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+		function emptyallelement(){
+    setTimeout(function Grid(){
+	arr = [];
+	document.getElementsByTagName('h2')[0].style.display='none';
+	n = document.getElementById('rows').value;
+	
+		var arr1=RandomNumbers(((n*n)/2));
+		var arr2= RandomNumbers((n*n)-1);
+		arr2.push(0);
+		for(i=0;i<((n*n)/2);i++)
+		{
+			arr[arr2[i]]=arr1[i];
+			arr[arr2[n*n-i-1]]=arr1[i];
+		}
+		createGridBox(n);	
+	},1000);
+	status_c=0;}
+		</script>
+	</head>
+	<body>
+		<div><center><h1>Ready to play??</h1>
+		
+		<p>Enter size</p>
+		<input type="text" placeholder="Rows" id="rows" autofocus required><br/>
+		
+		<input type="button" onclick="Grid();" value="Start" style="margin-top:20px"></input>
+		<table>
+		</table>
+		<h1 style="float: left; width:10%;  margin-left:620px;">Score:</h1><h1 style="float: right; width:10%; margin-right:590px; text-align: left;" id="score">0</h1></div>
+</center>
+<div><br/><h2 id="win" style="display: none;">
+			
+			You won
+		</h2></div>
+	</body>
+	<script type="text/javascript" src="script.js"></script>
+</html>
