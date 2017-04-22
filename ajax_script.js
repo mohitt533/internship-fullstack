@@ -1,4 +1,4 @@
-function Todo(opencard[], scr) {
+function Todo(opencard, scr) {
     this.opencard = opencard;
     this.score1= scr;
     
@@ -13,8 +13,9 @@ function init() {
 	for(var i=0;i<v;i++)
 	{ for(var j=0;j<v;j++)
 	    { var card=[];
-	card[i*j]  = document.getElementById("col"+i+j);
+	card[i*j]  = document.getElementById("col"+(toString(i*10+j)));
           card[i*j].onclick = getdata;
+		  console.log("mohit");
 	       getTodoData();}}
 }
 
@@ -63,10 +64,10 @@ function addTodosToPage() {
 			for (var p = 0; p < todos.length; i++)
 			{ var item=todos[p];
 				for(var k=0;k<item.opencard.length;k++)
-				{
-					if(opencard[k]==="col"i+j)
+				{var str=("col"+(toString(i*10+j)));
+					if(opencard[k].equals(str))
 					{
-						 document.getElementById("col"+i+j).className='opencard';
+						 document.getElementById("col"+(toString(i*10+j))).className='opencard';
 				    }   
 			    }
 	       
@@ -74,7 +75,7 @@ function addTodosToPage() {
         
     }
 }
-var state[];
+var state=[];
 var scoreboard;
 function getData() {
 	
@@ -82,7 +83,7 @@ function getData() {
 	{ for(var j=0;j<v;j++)
 	    { if(document.getElementById("col"+i+j).className===opencard)
 			{
-				state.push("col"+i+j);
+				state.push("col"+(toString(i*10+j)));
 			}
 	}}
 	scoreboard=document.getElementById("score").value;
@@ -90,13 +91,15 @@ function getData() {
 	todos.push(todoItem);
 }
 
-}        
+        
 
              
+             
+             
 function saveTodoData() {
-    var todoJSON = JSON.stringify(todos);
+    var dataJSON = JSON.stringify(todos);
     var request = new XMLHttpRequest();
-    var URL = "save.php?data=" + encodeURI(todoJSON);
+    var URL = "save.php?data=" + encodeURI(dataJSON);
     request.open("GET", URL);
     request.setRequestHeader("Content-Type",
                              "text/plain;charset=UTF-8");
